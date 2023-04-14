@@ -8,7 +8,7 @@ const app = express();
 const upload = multer({ dest: 'uploads/' });
 
 // Render HTML form with file upload field for PDF files
-app.get('/upload', (req, res) => {
+app.get('/', (req, res) => {
   res.send(`
     <html>
       <body>
@@ -51,6 +51,6 @@ app.post('/process', upload.single('pdfFile'), (req, res) => {
 });
 
 // Start the server
-app.listen(80, () => {
+app.listen(8000, () => {
   console.log('Server started on http://localhost:80');
 });
