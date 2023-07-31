@@ -15,10 +15,12 @@ sudo apt -y install ghostscript
 
 git clone https://github.com/mcsarathkumar/azure-iaas-paas.git
 
-cd azure-iaas-pass/iaas/
+cd ./azure-iaas-pass/iaas/
 
 npm install
 
 sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 8000
+
+sudo systemctl start nginx
 
 npm run start
